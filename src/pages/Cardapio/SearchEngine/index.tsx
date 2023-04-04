@@ -8,6 +8,7 @@ export default function SearchEngine({searchEngine, setSearchEngine}: SearchEngi
     <input
       value={searchEngine}
       onChange={event => setSearchEngine(event.target.value)}
+      placeholder='Buscar'
     />
     <CgSearch size={20} color='#4C4D5E' />
   </div>
