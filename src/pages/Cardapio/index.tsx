@@ -3,10 +3,12 @@ import { ReactComponent as Logo } from 'assets/logo.svg';
 import styles from './Cardapio.module.scss';
 import SearchEngine from './SearchEngine';
 import Filters from './Filters';
+import Ordination from './Ordination';
 
 export default function Cardapio() {
     const [searchEngine, setSearchEngine] = useState('');
     const [filter, setFilter] = useState<number | null>(null);
+    const [ordination, setOrdination] = useState('');
 
     return (
         <main>
@@ -24,6 +26,7 @@ export default function Cardapio() {
                 <SearchEngine searchEngine={searchEngine} setSearchEngine={setSearchEngine} />
                 <div className={styles.cardapio__filters}>
                     <Filters filter={filter} setFilter={setFilter} />
+                    <Ordination ordination={ordination} setOrdination={setOrdination} />
                 </div>
             </section>
         </main>
