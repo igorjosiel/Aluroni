@@ -1,6 +1,13 @@
 import React from "react";
 
+export interface IOption {
+  name: string,
+  value: IOrdinationOptions,
+};
+
+export type IOrdinationOptions = '' | 'porcao' | 'qtdPessoas' | 'preco';
+
 export interface IOrdinationProps {
-  ordination: string,
-  setOrdination: React.Dispatch<React.SetStateAction<string>>
+  ordination: IOrdinationOptions,
+  setOrdination: React.Dispatch<React.SetStateAction<IOrdinationOptions>>
 }
