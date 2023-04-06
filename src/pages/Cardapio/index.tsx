@@ -4,11 +4,13 @@ import styles from './Cardapio.module.scss';
 import SearchEngine from './SearchEngine';
 import Filters from './Filters';
 import Ordination from './Ordination';
+import Items from './Items';
+import { IOrdinationOptions } from './Ordination/Ordination.types';
 
 export default function Cardapio() {
     const [searchEngine, setSearchEngine] = useState('');
     const [filter, setFilter] = useState<number | null>(null);
-    const [ordination, setOrdination] = useState('');
+    const [ordination, setOrdination] = useState<IOrdinationOptions>('');
 
     return (
         <main>
@@ -28,6 +30,7 @@ export default function Cardapio() {
                     <Filters filter={filter} setFilter={setFilter} />
                     <Ordination ordination={ordination} setOrdination={setOrdination} />
                 </div>
+                <Items searchEngine={searchEngine} filter={filter} ordination={ordination} />
             </section>
         </main>
     );
