@@ -26,7 +26,7 @@ export default function Item(props: IItemProps) {
             {size}g
           </div>
           <div className={styles.item__amountPeople}>
-            Serve {serving} pessoa{serving === 1 ? "" : "s"}
+            Serve {serving} pessoa{serving === 1 ? '' : 's'}
           </div>
           <div className={styles.item__price}>
             R$ {price.toFixed(2)}
@@ -34,5 +34,5 @@ export default function Item(props: IItemProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
