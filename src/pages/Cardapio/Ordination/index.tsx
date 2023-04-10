@@ -19,7 +19,7 @@ export default function Ordination({ordination, setOrdination}: IOrdinationProps
       onClick={() => setOpen(!open)}
       onBlur={() => setOpen(false)}
     >
-      <span>{ordinationName || "Ordenar Por"}</span>
+      <span>{ordinationName || 'Ordenar Por'}</span>
       {open ? <MdKeyboardArrowUp size={22} /> : <MdKeyboardArrowDown size={22} />}
       <div className={classNames({
         [styles.ordination__options]: true,
@@ -36,5 +36,5 @@ export default function Ordination({ordination, setOrdination}: IOrdinationProps
         ))}
       </div>
     </button>
-  )
+  );
 }

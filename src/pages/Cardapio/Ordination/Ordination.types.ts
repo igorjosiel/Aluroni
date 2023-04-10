@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export interface IOption {
   name: string,
   value: IOrdinationOptions,
-};
+}
 
 export type IOrdinationOptions = '' | 'porcao' | 'qtdPessoas' | 'preco';
 
