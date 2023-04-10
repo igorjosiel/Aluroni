@@ -1,4 +1,4 @@
-import { IOrdinationOptions } from "../Ordination/Ordination.types";
+import { IOrdinationOptions } from '../Ordination/Ordination.types';
 
 export type IOrdinationType = 'size' | 'serving' | 'price';
 

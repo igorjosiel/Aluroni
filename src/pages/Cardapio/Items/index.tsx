@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import cardapio from './items.json';
+import cardapio from 'data/menu.json';
 import Item from './Item';
 import styles from './Items.module.scss';
 import { IItemsProps, IOrdinationType } from './Items.types';
@@ -27,11 +27,11 @@ export default function Items(props: IItemsProps) {
 
   function order(newList: typeof cardapio) {
     switch(ordination) {
-      case 'porcao': return orderBy(newList, 'size');
-      case 'qtdPessoas': return orderBy(newList, 'serving');
-      case 'preco': return orderBy(newList, 'price');
+    case 'porcao': return orderBy(newList, 'size');
+    case 'qtdPessoas': return orderBy(newList, 'serving');
+    case 'preco': return orderBy(newList, 'price');
 
-      default: return newList;
+    default: return newList;
     }
   }
 
@@ -39,7 +39,6 @@ export default function Items(props: IItemsProps) {
     const newList = cardapio.filter(item => testSearch(item.title) && testFilter(item.category.id));
 
     setList(order(newList));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchEngine, filter, ordination]);
 
   return (
@@ -48,5 +47,5 @@ export default function Items(props: IItemsProps) {
         <Item key={item.id} {...item} />
       ))}
     </div>
-  )
+  );
 }
