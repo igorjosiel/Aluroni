@@ -27,5 +27,5 @@ export default function Filters({filter, setFilter}: IFiltersProps) {
         ))
       }
     </div>
-  )
+  );
 }
