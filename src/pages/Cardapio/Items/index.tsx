@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import cardapio from 'data/menu.json';
+import menu from 'data/menu.json';
 import Item from './Item';
 import styles from './Items.module.scss';
 import { IItemsProps, IOrdinationType } from './Items.types';
+import { Menu } from 'types/Dish';
 
 export default function Items(props: IItemsProps) {
-  const [list, setList] = useState(cardapio);
+  const [list, setList] = useState(menu);
   
   const { searchEngine, filter, ordination } = props;
 
@@ -21,11 +22,11 @@ export default function Items(props: IItemsProps) {
     return true;
   }
 
-  function orderBy(newList: typeof cardapio, ordinationType: IOrdinationType) {
+  function orderBy(newList: Menu, ordinationType: IOrdinationType) {
     return newList.sort((item1, item2) => item1[ordinationType] > item2[ordinationType] ? 1 : -1);
   }
 
-  function order(newList: typeof cardapio) {
+  function order(newList: Menu) {
     switch(ordination) {
     case 'porcao': return orderBy(newList, 'size');
     case 'qtdPessoas': return orderBy(newList, 'serving');
@@ -36,7 +37,7 @@ export default function Items(props: IItemsProps) {
   }
 
   useEffect(() => {
-    const newList = cardapio.filter(item => testSearch(item.title) && testFilter(item.category.id));
+    const newList = menu.filter(item => testSearch(item.title) && testFilter(item.category.id));
 
     setList(order(newList));
   }, [searchEngine, filter, ordination]);
