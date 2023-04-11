@@ -6,6 +6,7 @@ import DefaultPage from 'components/DefaultPage';
 import About from 'pages/About';
 import Footer from 'components/Footer';
 import NotFound from 'pages/NotFound';
+import Dishe from 'pages/Dish';
 
 export default function AppRouter() {
   return (
@@ -19,6 +20,7 @@ export default function AppRouter() {
             <Route path='sobre' element={<About />} />
           </Route>
           <Route path='*' element={<NotFound />} />
+          <Route path='dishe/:id' element={<Dishe />} />
         </Routes>
         <Footer />
       </Router>
