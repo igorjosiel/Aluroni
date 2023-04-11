@@ -1,5 +1,7 @@
+import stylesTheme from 'styles/Theme.module.scss';
 import menu from 'data/menu.json';
 import styles from './Start.module.scss';
+import ourHouse from 'assets/our_house.png';
 
 export default function Start() {
   let recommendedDishes = [...menu];
@@ -8,7 +10,7 @@ export default function Start() {
 
   return (
     <section>
-      <h3 className={styles.title}>Recomendações da cozinha</h3>
+      <h3 className={stylesTheme.title}>Recomendações da cozinha</h3>
       <div className={styles.allRecommended}>
         {recommendedDishes.map(dishe => (
           <div key={dishe.id} className={styles.recommended}>
@@ -18,6 +20,13 @@ export default function Start() {
             <button className={styles.recommended__button}>Ver mais</button>
           </div>
         ))}
+      </div>
+      <h3 className={stylesTheme.title}>Nossa casa</h3>
+      <div className={styles.ourHouse}>
+        <img src={ourHouse} alt='Casa do aluroni' />
+        <div className={styles.ourHouse__address}>
+          Rua Vergueiro, 3185 <br /> <br /> Vila Mariana - SP
+        </div>
       </div>
     </section>
   );
