@@ -20,12 +20,9 @@ $veganos: #80aa40;
   @media (max-width: $mobile) {
     justify-content: flex-start;
   }
-}
-
-div {
-  margin: 10px;
 
   &__type {
+    font-size: 1.25rem;
     align-items: center;
     border-radius: 2px;
     display: flex;
@@ -67,4 +64,8 @@ div {
     color: $red;
     font-size: 1.7rem;
   }
+}
+
+div {
+  margin: 10px;
 }

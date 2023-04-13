@@ -30,6 +30,7 @@
 
     &--active {
       display: flex;
+      background-color: white;
     }
   }
 
@@ -42,7 +43,7 @@
     display: flex;
     height: 40px;
     justify-content: center;
-    width: inherit;
+    margin: 5px;
     &:hover,
 
     &--active {
