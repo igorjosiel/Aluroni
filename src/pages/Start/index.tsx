@@ -12,7 +12,7 @@ export default function Start() {
   const navigate = useNavigate();
 
   function redirectToDetails(dishe: Dish) {
-    navigate(`/dishe/${dishe.id}`, { state: { dishe } });
+    navigate(`/prato/${dishe.id}`, { state: { dishe } });
   }
 
   return (
