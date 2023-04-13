@@ -25,7 +25,7 @@ export default function Ordination({ordination, setOrdination}: IOrdinationProps
         [styles.ordination__options]: true,
         [styles['ordination__options--active']]: open,
       })}>
-        {options.map(option => (
+        {options.map(option => option.value && (
           <div
             key={option.value}
             className={styles.ordination__option}

@@ -10,6 +10,10 @@ body {
   font-family: 'Italiana', serif;
 }
 
+#root {
+  margin: 0px;
+}
+
 #root > main.container {
   display: flex;
   flex-direction: column;

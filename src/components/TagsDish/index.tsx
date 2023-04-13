@@ -7,7 +7,7 @@ export default function TagsDish({ category, size, serving, price }: Dish) {
     <div className={styles.tags}>
       <div className={classNames({
         [styles.tags__type]: true,
-        [styles[`tags__type__${category.label.toLowerCase}`]]: true
+        [styles[`tags__type__${category.name.toLowerCase()}`]]: true
       })}
       >
         {category.label}
@@ -18,7 +18,7 @@ export default function TagsDish({ category, size, serving, price }: Dish) {
       <div className={styles.tags__amountPeople}>
         Serve {serving} pessoa{serving === 1 ? '' : 's'}
       </div>
-      <div>
+      <div className={styles.tags__value}>
         R$ {price.toFixed(2)}
       </div>
     </div>
