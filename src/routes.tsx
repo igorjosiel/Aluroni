@@ -20,7 +20,7 @@ export default function AppRouter() {
             <Route path='sobre' element={<About />} />
           </Route>
           <Route path='*' element={<NotFound />} />
-          <Route path='dishe/:id' element={<Dishe />} />
+          <Route path='prato/:id' element={<Dishe />} />
         </Routes>
         <Footer />
       </Router>
