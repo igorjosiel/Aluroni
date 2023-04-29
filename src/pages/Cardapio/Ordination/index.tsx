@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 import styles from './Ordination.module.scss';
 import options from './options.json';
 import { IOrdinationProps } from './Ordination.types';
 
-export default function Ordination({ordination, setOrdination}: IOrdinationProps) {
+function Ordination({ ordination, setOrdination }: IOrdinationProps) {
   const [open, setOpen] = useState(false);
 
   const ordinationName = ordination && options.find(option => option.value === ordination)?.name;
@@ -38,3 +38,5 @@ export default function Ordination({ordination, setOrdination}: IOrdinationProps
     </button>
   );
 }
+
+export default memo(Ordination);

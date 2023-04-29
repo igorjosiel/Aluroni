@@ -7,7 +7,7 @@ import { Menu } from 'types/Dish';
 
 export default function Items(props: IItemsProps) {
   const [list, setList] = useState(menu);
-  
+
   const { searchEngine, filter, ordination } = props;
 
   function testSearch(title: string) {
@@ -17,7 +17,7 @@ export default function Items(props: IItemsProps) {
   }
 
   function testFilter(id: number) {
-    if(filter !== null) return filter === id;
+    if (filter !== null) return filter === id;
 
     return true;
   }
@@ -27,12 +27,12 @@ export default function Items(props: IItemsProps) {
   }
 
   function order(newList: Menu) {
-    switch(ordination) {
-    case 'porcao': return orderBy(newList, 'size');
-    case 'qtdPessoas': return orderBy(newList, 'serving');
-    case 'preco': return orderBy(newList, 'price');
+    switch (ordination) {
+      case 'porcao': return orderBy(newList, 'size');
+      case 'qtdPessoas': return orderBy(newList, 'serving');
+      case 'preco': return orderBy(newList, 'price');
 
-    default: return newList;
+      default: return newList;
     }
   }
 

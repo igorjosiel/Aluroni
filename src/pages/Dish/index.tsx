@@ -1,10 +1,12 @@
+import { lazy } from 'react';
 import { useParams, useNavigate, Routes, Route } from 'react-router-dom';
 import styles from './Dish.module.scss';
 import menu from 'data/menu.json';
-import TagsDish from 'components/TagsDish';
-import NotFound from 'pages/NotFound';
-import DefaultPage from 'components/DefaultPage';
 import GoBackButton from 'components/GoBackButton';
+
+const TagsDish = lazy(() => import('components/TagsDish'));
+const NotFound = lazy(() => import('pages/NotFound'));
+const DefaultPage = lazy(() => import('components/DefaultPage'));
 
 export default function Dish() {
   const { id } = useParams();
